@@ -139,13 +139,13 @@ Flywheel.set_velocity(120, RPM)
 def rollerSpeed(): 
     drivetrain.set_turn_velocity(5, PERCENT)
     controller_1.screen.clear_screen()
-    controller_1.screen.print("5% speed")
+    controller_1.screen.print("5 percent speed")
 
 #Creates function to bring turn velocity to 50%
 def driveSpeed(): 
     drivetrain.set_turn_velocity(50, PERCENT)
     controller_1.screen.clear_screen()
-    controller_1.screen.print("50% speed")
+    controller_1.screen.print("50 percent speed")
 #Creates function to rectract pneumatic piston for index
 def indexCloseBurst(): 
     Flywheel.spin(FORWARD, 10.0, VOLT)
@@ -208,16 +208,16 @@ left_motor_b = Motor(Ports.PORT13, GearSetting.RATIO_18_1, True)
 left_drive_smart = MotorGroup(left_motor_a, left_motor_b)
 
 Intake.set_velocity(100, PERCENT)
-Flywheel.set_velocity(100, PERCENT)
+
 
 #drivetrain.drive_for(FORWARD, 200, MM, wait=False)
 #Intake.spin_for(FORWARD, 2000000, DEGREES)
-controller_1.screen.print("Done")
+#controller_1.screen.print("Done")
 
-wait(1, SECONDS)
+#wait(1, SECONDS)
 #drivetrain.drive_for(REVERSE, 60, MM)
 #Intake.spin_for(REVERSE, 180, DEGREES, wait=False)
-wait(1, SECONDS)
+#wait(1, SECONDS)
 
 #drivetrain.drive_for(FORWARD, 190, MM)
 #drivetrain.turn_for(LEFT, -51, DEGREES)
