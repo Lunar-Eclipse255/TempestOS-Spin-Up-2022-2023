@@ -247,26 +247,5 @@ Intake.set_velocity(100, PERCENT)
 Flywheel.set_velocity(100, PERCENT)
 
 
-#drivetrain.drive_for(FORWARD, 200, MM, wait=False)
-#Intake.spin_for(FORWARD, 2000000, DEGREES)
-controller_1.screen.print("Done")
 
-
-wait(1, SECONDS)
-#drivetrain.drive_for(REVERSE, 60, MM)
-#Intake.spin_for(REVERSE, 180, DEGREES, wait=False)
-wait(1, SECONDS)
-
-
-#drivetrain.drive_for(FORWARD, 190, MM)
-#drivetrain.turn_for(LEFT, -51, DEGREES)
-#drivetrain.drive_for(REVERSE, 3000.2, MM)
-#drivetrain.turn_for(LEFT, 5, DEGREES)
-#drivetrain.drive_for(REVERSE, 150, MM)
-
-
-#drivetrain.turn_for(LEFT, 40, DEGREES)
-#drivetrain.drive_for(REVERSE, 450, MM,wait=False)
-#wait(1.5,SECONDS)
-#Intake.spin_for(FORWARD, -90, DEGREES)
 

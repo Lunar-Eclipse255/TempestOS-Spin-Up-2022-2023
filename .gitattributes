@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+const gitExtension = vscode.extensions.getExtension<GitExtension>('vscode.git').exports;
+const git = gitExtension.getAPI(1);
+
