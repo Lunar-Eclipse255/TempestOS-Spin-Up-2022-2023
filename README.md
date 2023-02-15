@@ -3,10 +3,10 @@
   <h3 align="center">StyxOS</h3>
 
   <p align="center">
-    <a href="https://github.com/Lunar-Eclipse255 & Cay Codez/StyxOS"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Lunar-Eclipse255/StyxOS"><strong>Explore the docs »</strong></a>
     <br/>
     <br/>
-    <a href="https://github.com/Lunar-Eclipse255 & Cay Codez/StyxOS/issues">Report Bug</a>
+    <a href="https://github.com/Lunar-Eclipse255/StyxOS/issues">Report Bug</a>
     .
   </p>
 </p>
