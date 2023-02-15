@@ -58,7 +58,7 @@ https://www.vexrobotics.com/vexcode/install/v5
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/Lunar-Eclipse255 & Cay Codez/StyxOS/blob/main/LICENSE.md) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/Lunar-Eclipse255/StyxOS/blob/main/LICENSE.md) for more information.
 
 ## Authors
 
