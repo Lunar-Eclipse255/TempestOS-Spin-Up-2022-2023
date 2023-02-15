@@ -65,8 +65,3 @@ Distributed under the MIT License. See [LICENSE](https://github.com/Lunar-Eclips
 * **Lunar-Eclipse255** - *Coder* - [Lunar-Eclipse255](https://github.com/Lunar-Eclipse255) - *Coded*
 * **CayCodez** - *Coder* - [CayCodez](https://github.com/Lunar-Eclipse255) - *Coded*
 
-## Acknowledgements
-
-* []()
-* []()
-* []()
