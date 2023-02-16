@@ -292,22 +292,37 @@ Flywheel.set_velocity(120, RPM)
 
 #Creates function to rectract pneumatic piston for index
 def indexCloseBurst():
-   Flywheel.spin(FORWARD, 10.0, VOLT)
-   wait(1, SECONDS)
+   Flywheel.spin(FORWARD, 9, VOLT)
+   wait(1.5, SECONDS)
    Index.set(True)
-   wait(0.3, SECONDS)
+   wait(0.5, SECONDS)
    Index.set(False)
-   wait(0.3, SECONDS)
+   wait(0.5, SECONDS)
    Index.set(True)
-   wait(0.3, SECONDS)
+   wait(0.5, SECONDS)
    Index.set(False)
-   wait(0.3, SECONDS)
+   wait(0.5, SECONDS)
    Index.set(True)
-   wait(0.3, SECONDS)
+   wait(0.5, SECONDS)
    Index.set(False)
    controller_1.screen.clear_screen()
    controller_1.screen.print("index")
    Flywheel.stop()
+
+def indexAutonomous():
+    Flywheel.spin(FORWARD, 12.0, VOLT)
+    wait(1, SECONDS)
+    Index.set(True)
+    wait(0.5, SECONDS)
+    Index.set(False)
+    wait(0.5, SECONDS)
+    Index.set(True)
+    wait(0.5, SECONDS)
+    Index.set(False)
+    wait(0.5, SECONDS)
+    controller_1.screen.clear_screen()
+    controller_1.screen.print("index")
+    Flywheel.stop()
 
 
 
@@ -352,7 +367,7 @@ def pre_autonomous():
   
 def autonomous():
     pass
-   
+
 
 
 
@@ -399,3 +414,4 @@ def vexcode_driver_function():
 
 # register the competition functions
 competition = Competition( vexcode_driver_function, vexcode_auton_function )
+>>>>>>> Stashed changes

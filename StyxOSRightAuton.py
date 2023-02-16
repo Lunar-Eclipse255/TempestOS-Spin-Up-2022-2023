@@ -292,22 +292,37 @@ Flywheel.set_velocity(120, RPM)
 
 #Creates function to rectract pneumatic piston for index
 def indexCloseBurst():
-   Flywheel.spin(FORWARD, 10.0, VOLT)
-   wait(1, SECONDS)
+   Flywheel.spin(FORWARD, 9, VOLT)
+   wait(1.5, SECONDS)
    Index.set(True)
-   wait(0.3, SECONDS)
+   wait(0.5, SECONDS)
    Index.set(False)
-   wait(0.3, SECONDS)
+   wait(0.5, SECONDS)
    Index.set(True)
-   wait(0.3, SECONDS)
+   wait(0.5, SECONDS)
    Index.set(False)
-   wait(0.3, SECONDS)
+   wait(0.5, SECONDS)
    Index.set(True)
-   wait(0.3, SECONDS)
+   wait(0.5, SECONDS)
    Index.set(False)
    controller_1.screen.clear_screen()
    controller_1.screen.print("index")
    Flywheel.stop()
+
+def indexAutonomous():
+    Flywheel.spin(FORWARD, 12.0, VOLT)
+    wait(1, SECONDS)
+    Index.set(True)
+    wait(0.5, SECONDS)
+    Index.set(False)
+    wait(0.5, SECONDS)
+    Index.set(True)
+    wait(0.5, SECONDS)
+    Index.set(False)
+    wait(0.5, SECONDS)
+    controller_1.screen.clear_screen()
+    controller_1.screen.print("index")
+    Flywheel.stop()
 
 
 
@@ -351,10 +366,17 @@ def pre_autonomous():
   
   
 def autonomous():
+    drivetrain.drive_for(FORWARD, 800, MM)
+    drivetrain.turn_for(LEFT, 13.5, DEGREES)
+    wait(0.5, SECONDS)
+    indexAutonomous()
+    drivetrain.turn_for(RIGHT, 29, DEGREES)
+    drivetrain.drive_for(REVERSE, 1000, MM)
+    drivetrain.turn_for(LEFT, 22, DEGREES)
+    drivetrain.drive_for(REVERSE, 150, MM,wait=False)
+    Intake.spin_for(REVERSE, 350, DEGREES)
 
-   # place automonous code here
-   #Drives into and spins first roller
-  
+
 
 
 
@@ -367,9 +389,10 @@ def autonomous():
 
   
 def user_control():
-   brain.screen.clear_screen()
-   Intake.set_velocity(1000000, PERCENT)
-   drivetrain.set_drive_velocity(100, PERCENT)
+    brain.screen.clear_screen()
+    Intake.set_velocity(1000000, PERCENT)
+    drivetrain.set_drive_velocity(100, PERCENT)
+    drivetrain.set_turn_velocity(50, PERCENT)
 
 
 # create a function for handling the starting and stopping of all autonomous tasks
@@ -401,3 +424,4 @@ def vexcode_driver_function():
 
 # register the competition functions
 competition = Competition( vexcode_driver_function, vexcode_auton_function )
+>>>>>>> Stashed changes
