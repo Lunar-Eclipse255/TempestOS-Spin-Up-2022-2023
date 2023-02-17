@@ -323,6 +323,24 @@ def indexAutonomous():
     controller_1.screen.clear_screen()
     controller_1.screen.print("index")
     Flywheel.stop()
+      
+def indexFar():
+    Flywheel.spin(FORWARD, 12.0, VOLT)
+    wait(1, SECONDS)
+    Index.set(True)
+    wait(0.5, SECONDS)
+    Index.set(False)
+    wait(0.5, SECONDS)
+    Index.set(True)
+    wait(0.5, SECONDS)
+    Index.set(False)
+    wait(0.5, SECONDS)
+    Index.set(True)
+    wait(0.5, SECONDS)
+    Index.set(False)
+    controller_1.screen.clear_screen()
+    controller_1.screen.print("index")
+    Flywheel.stop()
 
 
 
@@ -332,7 +350,7 @@ def indexAutonomous():
 
 #Makes it so when L2 is pressed the pneumatic piston retracts for index
 controller_1.buttonY.pressed(indexCloseBurst)
-
+controller_1.buttonB.pressed(indexFar)
 
 
       
