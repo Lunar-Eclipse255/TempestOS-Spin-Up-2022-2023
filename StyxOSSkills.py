@@ -341,6 +341,7 @@ def indexFar():
     controller_1.screen.clear_screen()
     controller_1.screen.print("index")
     Flywheel.stop()
+   
 def Skills():
    pass
 
