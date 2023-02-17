@@ -341,7 +341,8 @@ def indexFar():
     controller_1.screen.clear_screen()
     controller_1.screen.print("index")
     Flywheel.stop()
-
+def Skills():
+   pass
 
 
 
@@ -350,8 +351,8 @@ def indexFar():
 
 #Makes it so when L2 is pressed the pneumatic piston retracts for index
 controller_1.buttonY.pressed(indexCloseBurst)
-controller_1.buttonY.pressed(indexFar)
-
+controller_1.buttonB.pressed(indexFar)
+controller_1.buttonUp.pressed(Skills)
 
 
       
