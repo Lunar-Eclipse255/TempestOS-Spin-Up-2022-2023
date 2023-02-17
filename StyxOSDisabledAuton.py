@@ -311,7 +311,7 @@ def indexCloseBurst():
 
 def indexAutonomous():
     Flywheel.spin(FORWARD, 12.0, VOLT)
-    wait(1, SECONDS)
+    wait(5, SECONDS)
     Index.set(True)
     wait(0.5, SECONDS)
     Index.set(False)
@@ -326,7 +326,7 @@ def indexAutonomous():
       
 def indexFar():
     Flywheel.spin(FORWARD, 12.0, VOLT)
-    wait(1, SECONDS)
+    wait(5, SECONDS)
     Index.set(True)
     wait(0.5, SECONDS)
     Index.set(False)
