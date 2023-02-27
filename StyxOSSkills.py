@@ -1,37 +1,18 @@
-# ------------------------------------------
-#
-#   Project:      VEXcode Project
-#   Author:       VEX
-#   Created:
-#   Description:  VEXcode V5 Python Project
-#
-# ------------------------------------------
-
-
-
-
 # Library imports
 from vex import *
-
-
 
 
 # Begin project code
 # Extends pneumatic piston
 Index.set(False)
-tempDisplay=0
-rollerTimer=0
-Flywheel.set_velocity(120, RPM)
 Endgame.set(False)
 
 
 
 
-
-
-#Creates function to rectract pneumatic piston for index
-def indexCloseBurst():
-  Flywheel.spin(FORWARD, 10, VOLT)
+#Creates function to retract pneumatic piston for index
+def index_close_burst():
+  Flywheel.spin(FORWARD, 9, VOLT)
   wait(3, SECONDS)
   Index.set(True)
   wait(0.5, SECONDS)
@@ -49,7 +30,9 @@ def indexCloseBurst():
   Flywheel.stop()
 
 
-def indexAutonomous():
+
+
+def index_autonomous():
    Flywheel.spin(FORWARD, 12.0, VOLT)
    wait(5, SECONDS)
    Index.set(True)
@@ -65,7 +48,9 @@ def indexAutonomous():
    Flywheel.stop()
 
 
-def indexFar():
+
+
+def index_far():
    Flywheel.spin(FORWARD, 12.0, VOLT)
    wait(5, SECONDS)
    Index.set(True)
@@ -82,13 +67,18 @@ def indexFar():
    controller_1.screen.clear_screen()
    controller_1.screen.print("index")
    Flywheel.stop()
-def Skills():
+
+
+
+
+def skills():
+   Intake.set_velocity(1000000, PERCENT)
    drivetrain.drive_for(REVERSE, 50, MM, wait=False)
    Intake.spin_for(REVERSE, 580, DEGREES)
    drivetrain.drive_for(FORWARD,130, MM)
    drivetrain.turn_for(LEFT, 5, DEGREES)
    drivetrain.drive_for(FORWARD, 460, MM)
-   drivetrain.turn_for(LEFT, 39, DEGREES)
+   drivetrain.turn_for(LEFT, 38, DEGREES)
    drivetrain.drive_for(REVERSE, 800, MM, wait=False)
    Intake.spin_for(REVERSE, 1900, DEGREES)
    drivetrain.set_drive_velocity(50, PERCENT)
@@ -97,25 +87,29 @@ def Skills():
    Intake.spin_for(FORWARD,1500,DEGREES,wait=False)
    drivetrain.drive_for(REVERSE, 685, MM)
    drivetrain.drive_for(FORWARD, 350, MM)
-   drivetrain.turn_for(RIGHT, 70, DEGREES)
+   drivetrain.turn_for(RIGHT, 68, DEGREES)
    Intake.spin_for(REVERSE,600,DEGREES)
    Intake.spin(FORWARD)
    drivetrain.drive_for(FORWARD, 1350, MM)
    Intake.stop()
-   drivetrain.turn_for(RIGHT, 11, DEGREES)
-   Intake.spin_for(REVERSE,200,DEGREES)
-   indexCloseBurst()
-   drivetrain.turn_for(RIGHT, 40, DEGREES)
+   Intake.spin_for(REVERSE,300,DEGREES)
+   drivetrain.turn_for(RIGHT, 10, DEGREES)
+   index_close_burst()
+   drivetrain.turn_for(RIGHT, 34.5, DEGREES)
    Endgame.set(True)
 
 
-def Endgame_():
+
+
+def endgame():
    Endgame.set(True)
 
 
-def indexOne():
-   Flywheel.spin(FORWARD,10, VOLT)
-   wait(5, SECONDS)
+
+
+def index_one():
+   Flywheel.spin(FORWARD,9, VOLT)
+   wait(3, SECONDS)
    Index.set(True)
    wait(0.5, SECONDS)
    Index.set(False)
@@ -126,23 +120,19 @@ def indexOne():
 
 
 
-#Makes it so when L2 is pressed the pneumatic piston retracts for index
-controller_1.buttonY.pressed(indexCloseBurst)
-controller_1.buttonB.pressed(indexFar)
-controller_1.buttonUp.pressed(Skills)
-controller_1.buttonA.pressed(Endgame_)
-controller_1.buttonX.pressed(indexOne)
+#Programs the face buttons
+controller_1.buttonY.pressed(index_close_burst)
+controller_1.buttonB.pressed(index_far)
+controller_1.buttonUp.pressed(skills)
+controller_1.buttonLeft.pressed(endgame)
+controller_1.buttonX.pressed(index_one)
 
 
-
-
-    
-#Sets the speed for Roller and drive train velocity 
-Intake.set_velocity(100, PERCENT)
+#Sets the robot's different velocities
+Intake.set_velocity(10000000, PERCENT)
+Flywheel.set_velocity(1000000, PERCENT)
 drivetrain.set_drive_velocity(75, PERCENT)
 drivetrain.set_drive_velocity(50, PERCENT)
-
-
 
 
 #Reverses the values of two motors
@@ -152,17 +142,3 @@ right_drive_smart = MotorGroup(right_motor_a, right_motor_b)
 left_motor_a = Motor(Ports.PORT1, GearSetting.RATIO_18_1, False)
 left_motor_b = Motor(Ports.PORT13, GearSetting.RATIO_18_1, True)
 left_drive_smart = MotorGroup(left_motor_a, left_motor_b)
-
-
-
-
-Intake.set_velocity(100, PERCENT)
-Flywheel.set_velocity(100, PERCENT)
-
-
-
-
-Intake.set_velocity(10000000, PERCENT)
-Flywheel.set_velocity(1000000, PERCENT)
-
-
