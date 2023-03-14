@@ -123,7 +123,7 @@ def pre_autonomous():
 def autonomous():
    drivetrain.drive_for(FORWARD, 870, MM)
    drivetrain.turn_for(LEFT, 14.5, DEGREES)
-   index_autonomous()
+   index_far()
    drivetrain.drive_for(REVERSE, 200, MM)
    drivetrain.turn_for(LEFT, 40, DEGREES)
 

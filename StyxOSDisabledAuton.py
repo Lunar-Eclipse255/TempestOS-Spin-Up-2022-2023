@@ -12,7 +12,7 @@ Endgame.set(False)
 
 #Creates function to rectract pneumatic piston for index
 def index_close_burst():
-  Flywheel.spin(FORWARD, 9, VOLT)
+  Flywheel.spin(FORWARD, 10, VOLT)
   wait(3, SECONDS)
   Index.set(True)
   wait(0.5, SECONDS)
@@ -105,20 +105,14 @@ drivetrain.set_drive_velocity(50, PERCENT)
 
 
 #Reverses the values of two motors
-right_motor_a = Motor(Ports.PORT10, GearSetting.RATIO_18_1, True)
-right_motor_b = Motor(Ports.PORT18, GearSetting.RATIO_18_1, False)
-right_drive_smart = MotorGroup(right_motor_a, right_motor_b)
-left_motor_a = Motor(Ports.PORT1, GearSetting.RATIO_18_1, False)
-left_motor_b = Motor(Ports.PORT13, GearSetting.RATIO_18_1, True)
-left_drive_smart = MotorGroup(left_motor_a, left_motor_b)
+
+
 
 
 
 
 def pre_autonomous():
-   Intake.set_velocity(100, PERCENT)
-   drivetrain.set_drive_velocity(75, PERCENT)
-   drivetrain.set_drive_velocity(50, PERCENT)
+   pass
  
 def autonomous():
    pass
@@ -127,6 +121,15 @@ def autonomous():
 
 
 def user_control():
+   Intake.set_velocity(100, PERCENT)
+   drivetrain.set_drive_velocity(75, PERCENT)
+   drivetrain.set_turn_velocity(10, PERCENT)
+   right_motor_a = Motor(Ports.PORT13, GearSetting.RATIO_18_1, False)
+   right_motor_b = Motor(Ports.PORT1, GearSetting.RATIO_18_1, True)
+   right_drive_smart = MotorGroup(right_motor_a, right_motor_b)
+   left_motor_a = Motor(Ports.PORT18, GearSetting.RATIO_18_1, True)
+   left_motor_b = Motor(Ports.PORT10, GearSetting.RATIO_18_1, False)
+   left_drive_smart = MotorGroup(left_motor_a, left_motor_b)
    Intake.set_velocity(100, PERCENT)
    drivetrain.set_drive_velocity(75, PERCENT)
    drivetrain.set_drive_velocity(50, PERCENT)
@@ -163,7 +166,7 @@ def vexcode_driver_function():
   driver_control_task_0.stop()
 
 
-#test
+
 
 # register the competition functions
 competition = Competition( vexcode_driver_function, vexcode_auton_function )
