@@ -1,7 +1,7 @@
 {
   "py/object": "pros.conductor.project.Project",
   "py/state": {
-    "project_name": "StyxOS_Beta",
+    "project_name": "StyxOS_Alpha",
     "target": "v5",
     "templates": {
       "kernel": {
@@ -311,7 +311,8 @@
     "upload_options": {
       "slot": 6,
       "icon": "X",
-      "after": "run"
+      "after": "run",
+      "description": "StyxOS_Alpha"
     }
   }
 }
